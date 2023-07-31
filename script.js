@@ -40,3 +40,31 @@ function init() {
 }
 
 init();
+function simulateRealTimeData() {
+    // Simulate real-time data for NSE and BSE stocks (Placeholder data)
+    const nsePrice = Math.random() * 1000 + 500;
+    const nseVolume = Math.random() * 100000 + 50000;
+    const bsePrice = Math.random() * 800 + 200;
+    const bseVolume = Math.random() * 50000 + 20000;
+
+    // Update NSE stock details
+    document.getElementById('nse-price').textContent = nsePrice.toFixed(2);
+    document.getElementById('nse-volume').textContent = nseVolume.toFixed(0);
+
+    // Update BSE stock details
+    document.getElementById('bse-price').textContent = bsePrice.toFixed(2);
+    document.getElementById('bse-volume').textContent = bseVolume.toFixed(0);
+
+    // Calculate and update price indicators
+    const nseIndicator = nsePrice > 800 ? 'High' : 'Low';
+    const bseIndicator = bsePrice > 500 ? 'High' : 'Low';
+    document.getElementById('price-indicator').textContent = nseIndicator;
+    document.getElementById('price-indicator-bse').textContent = bseIndicator;
+}
+
+function init() {
+    simulateRealTimeData(); // Initial data
+    setInterval(simulateRealTimeData, 3000); // Update data every 3 seconds (simulated real-time)
+}
+
+init();
