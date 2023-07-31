@@ -39,3 +39,87 @@ textarea {
 h2 {
     margin-bottom: 10px;
 }
+body {
+  background-color: #000;
+  color: #0f0; /* Green font color */
+  font-family: 'Courier New', monospace;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  color: #0f0; /* Green header color */
+  text-align: center;
+}
+
+.date-time {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.calendar {
+  /* Add styles for the calendar here */
+}
+
+.notes {
+  margin-bottom: 20px;
+}
+
+textarea {
+  width: 100%;
+  background-color: #0a0a0a; /* Dark gray background for the notes textarea */
+  color: #0f0; /* Green font color for the notes textarea */
+  border: 1px solid #0f0;
+  resize: vertical;
+  padding: 10px;
+}
+
+.quotes {
+  border-top: 1px solid #0f0;
+  padding-top: 20px;
+}
+
+h2 {
+  color: #0f0; /* Green subheading color */
+  margin-bottom: 10px;
+}
+
+blockquote {
+  border-left: 4px solid #0f0; /* Green vertical bar for quotes */
+  padding-left: 10px;
+  font-size: 1.2em;
+  font-style: italic;
+  margin: 10px 0;
+}
+
+/* Additional styles for the hacking theme */
+
+/* Terminal-like blinking cursor */
+.blinking-cursor {
+  display: inline-block;
+  animation: blinking 1s step-end infinite;
+}
+
+@keyframes blinking {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Links styling */
+a {
+  color: #0f0;
+  text-decoration: none;
+}
+
+a:hover {
+  border-bottom: 1px solid #0f0;
+}
+
+/* Add any additional styles you want for your hacking-themed design */
