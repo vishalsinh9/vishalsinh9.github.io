@@ -3,14 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator App</title>
+    <title>Professional Calculator</title>
     <style>
-        /* Add your CSS styles here if you want to customize the appearance */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .calculator {
+            width: 300px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+            padding: 20px;
+        }
+
+        .result {
+            font-size: 36px;
+            text-align: right;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 10px;
+        }
+
+        button {
+            font-size: 24px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #f0f0f0;
+            transition: background-color 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #e0e0e0;
+        }
+
+        .button-operator {
+            background-color: #f0f0f0;
+        }
+
+        .button-operator:hover {
+            background-color: #ccc;
+        }
+
+        .button-equal {
+            grid-column: span 2;
+            background-color: #f09b3d;
+            color: #fff;
+        }
+
+        .button-equal:hover {
+            background-color: #e08135;
+        }
     </style>
 </head>
 <body>
     <div class="calculator">
-        <input type="text" id="result" disabled>
+        <div class="result" id="result">0</div>
         <div class="buttons">
             <button onclick="clearDisplay()">C</button>
             <button onclick="appendToDisplay('/')">/</button>
@@ -26,7 +89,7 @@
             <button onclick="appendToDisplay('1')">1</button>
             <button onclick="appendToDisplay('2')">2</button>
             <button onclick="appendToDisplay('3')">3</button>
-            <button onclick="calculateResult()">=</button>
+            <button onclick="calculateResult()" class="button-equal">=</button>
             <button onclick="appendToDisplay('0')">0</button>
             <button onclick="appendToDisplay('.')">.</button>
         </div>
@@ -34,20 +97,24 @@
 
     <script>
         function appendToDisplay(value) {
-            document.getElementById("result").value += value;
+            const resultDisplay = document.getElementById("result");
+            if (resultDisplay.textContent === "0" && value !== ".") {
+                resultDisplay.textContent = "";
+            }
+            resultDisplay.textContent += value;
         }
 
         function clearDisplay() {
-            document.getElementById("result").value = "";
+            document.getElementById("result").textContent = "0";
         }
 
         function calculateResult() {
             try {
-                const expression = document.getElementById("result").value;
+                const expression = document.getElementById("result").textContent;
                 const result = eval(expression);
-                document.getElementById("result").value = result;
+                document.getElementById("result").textContent = result;
             } catch (error) {
-                document.getElementById("result").value = "Error";
+                document.getElementById("result").textContent = "Error";
             }
         }
     </script>
