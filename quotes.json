@@ -1,21 +1,11 @@
-function updateQuote() {
-    fetch('quotes.json')
-        .then(response => response.json())
-        .then(data => {
-            const randomIndex = Math.floor(Math.random() * data.length);
-            const quoteElement = document.getElementById('quote');
-            quoteElement.textContent = `${data[randomIndex].quote} - ${data[randomIndex].author}`;
-        })
-        .catch(error => {
-            console.error('Error fetching quotes:', error);
-        });
-}
-
-function init() {
-    updateDateTime();
-    updateQuote(); // Initial quote
-    setInterval(updateDateTime, 1000);
-    setInterval(updateQuote, 15000); // Update quote every 15 seconds
-}
-
-init();
+[
+    {
+        "quote": "The only way to do great work is to love what you do.",
+        "author": "Steve Jobs"
+    },
+    {
+        "quote": "Believe you can and you're halfway there.",
+        "author": "Theodore Roosevelt"
+    },
+    // Add more quotes here...
+]
