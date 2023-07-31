@@ -1,45 +1,4 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-.container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-h1 {
-    text-align: center;
-}
-
-.date-time {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.calendar {
-    /* Add CSS styles for the calendar here */
-}
-
-.notes {
-    margin-bottom: 20px;
-}
-
-textarea {
-    width: 100%;
-}
-
-.quotes {
-    border-top: 1px solid #ccc;
-    padding-top: 20px;
-}
-
-h2 {
-    margin-bottom: 10px;
-}
-body {
   background-color: #000;
   color: #0f0; /* Green font color */
   font-family: 'Courier New', monospace;
