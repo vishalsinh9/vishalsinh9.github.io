@@ -1,84 +1,80 @@
-body {
-  background-color: #000;
-  color: #0f0; /* Green font color */
-  font-family: 'Courier New', monospace;
+/* Reset default styles */
+body, html {
   margin: 0;
   padding: 0;
+  font-family: Arial, sans-serif;
 }
 
-.container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
+/* Set a background color or image */
+body {
+  background-color: #f2f2f2;
 }
 
-h1 {
-  color: #0f0; /* Green header color */
-  text-align: center;
-}
-
-.date-time {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.calendar {
-  /* Add styles for the calendar here */
-}
-
-.notes {
-  margin-bottom: 20px;
-}
-
-textarea {
+/* Center the map container */
+#map {
+  height: 500px;
   width: 100%;
-  background-color: #0a0a0a; /* Dark gray background for the notes textarea */
-  color: #0f0; /* Green font color for the notes textarea */
-  border: 1px solid #0f0;
-  resize: vertical;
+  margin: 0 auto;
+}
+
+/* Styling for map markers */
+.google-maps-marker {
+  /* Add your marker styles here */
+  background-color: #007BFF;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Styling for marker info windows */
+.google-maps-infowindow {
+  /* Add your info window styles here */
+  background-color: #fff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
   padding: 10px;
+  border-radius: 4px;
+  max-width: 200px;
 }
 
-.quotes {
-  border-top: 1px solid #0f0;
-  padding-top: 20px;
+.google-maps-infowindow h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 16px;
 }
 
-h2 {
-  color: #0f0; /* Green subheading color */
-  margin-bottom: 10px;
+.google-maps-infowindow p {
+  margin: 0;
 }
 
-blockquote {
-  border-left: 4px solid #0f0; /* Green vertical bar for quotes */
-  padding-left: 10px;
-  font-size: 1.2em;
-  font-style: italic;
-  margin: 10px 0;
+/* Styling for the header */
+header {
+  background-color: #007BFF;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
 }
 
-/* Additional styles for the hacking theme */
-
-/* Terminal-like blinking cursor */
-.blinking-cursor {
-  display: inline-block;
-  animation: blinking 1s step-end infinite;
+header h1 {
+  margin: 0;
+  font-size: 36px;
 }
 
-@keyframes blinking {
-  50% {
-    opacity: 0;
-  }
+/* Styling for the footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
 }
 
-/* Links styling */
-a {
-  color: #0f0;
-  text-decoration: none;
+/* Add your own additional styles as needed */
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+  /* Add styles for smaller screens */
 }
 
-a:hover {
-  border-bottom: 1px solid #0f0;
+@media (max-width: 480px) {
+  /* Add styles for mobile screens */
 }
-
-/* Add any additional styles you want for your hacking-themed design */
