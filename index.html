@@ -3,33 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Canadian Toronto Time</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Real-time Stock Details</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Canadian Toronto Time</h1>
-        <div class="date-time">
-            <p id="real-time"></p>
-            <p id="real-date"></p>
+    <div class="stock-container">
+        <div class="stock-details">
+            <h2>NSE - ABC Stock</h2>
+            <p>Price: <span id="nse-price">Loading...</span></p>
+            <p>Volume: <span id="nse-volume">Loading...</span></p>
         </div>
-        <div class="calendar">
-            <!-- Calendar code with holidays will be added here -->
-        </div>
-        <div class="notes">
-            <h2>Notes</h2>
-            <textarea id="notes" rows="10" placeholder="Write your notes here..."></textarea>
-        </div>
-        <div class="quotes">
-            <h2>Quotes</h2>
-            <blockquote>
-                
-    
-
-            </blockquote>
-            <!-- Add more quotes here -->
+        <div class="price-indicator">
+            <span id="price-indicator">Loading...</span>
         </div>
     </div>
+
+    <div class="stock-container">
+        <div class="stock-details">
+            <h2>BSE - XYZ Stock</h2>
+            <p>Price: <span id="bse-price">Loading...</span></p>
+            <p>Volume: <span id="bse-volume">Loading...</span></p>
+        </div>
+        <div class="price-indicator">
+            <span id="price-indicator-bse">Loading...</span>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>
