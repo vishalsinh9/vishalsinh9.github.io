@@ -1,54 +1,35 @@
-// Assuming you have obtained your API key from the weather API provider
-const apiKey = 'YOUR_API_KEY';
-const weatherAPIUrl = 'https://api.weatherapi.com/v1/current.json';
+function search() {
+    const apiKey = "AIzaSyD-OOFfvHWQd9NfmmJoO5Xln8_XKLfp7gI";
+    const searchEngineID = "YOUR_CUSTOM_SEARCH_ENGINE_ID";
+    const searchQuery = document.getElementById("searchInput").value;
+    const resultsList = document.getElementById("resultsList");
 
-// Function to fetch weather data from the API
-async function fetchWeatherData(latitude, longitude) {
-    try {
-        const response = await fetch(`${weatherAPIUrl}?key=${apiKey}&q=${latitude},${longitude}`);
-        const data = await response.json();
-        return data;
-    } catch (error) {
-        console.error('Error fetching weather data:', error);
-        return null;
-    }
-}
+    resultsList.innerHTML = ""; // Clear previous results
 
-// Function to initialize the map
-function initMap() {
-    // Initialize the map (you need to use a valid API key for Google Maps)
-    const map = new google.maps.Map(document.getElementById('map'), {
-        center: { lat: 56.1304, lng: -106.3468 }, // Default center for Canada
-        zoom: 4 // Adjust the zoom level as needed
-    });
-
-    // Add markers to the map with weather information
-    // You'll need to fetch latitude and longitude for specific cities/locations
-    const cities = [
-        { name: 'Toronto', lat: 43.651070, lng: -79.347015 },
-        { name: 'Vancouver', lat: 49.2827, lng: -123.1207 },
-        // Add more cities as needed...
-    ];
-
-    cities.forEach(city => {
-        const marker = new google.maps.Marker({
-            position: { lat: city.lat, lng: city.lng },
-            map: map,
-            title: city.name
+    // Make a request to Google Custom Search JSON API
+    fetch(`https://www.googleapis.com/customsearch/v1?key=${apiKey}&cx=${searchEngineID}&q=${encodeURIComponent(searchQuery)}`)
+        .then(response => response.json())
+        .then(data => {
+            // Display search results
+            if (data.items) {
+                data.items.forEach(item => {
+                    const listItem = document.createElement("li");
+                    const link = document.createElement("a");
+                    link.href = item.link;
+                    link.textContent = item.title;
+                    listItem.appendChild(link);
+                    resultsList.appendChild(listItem);
+                });
+            } else {
+                const listItem = document.createElement("li");
+                listItem.textContent = "No results found.";
+                resultsList.appendChild(listItem);
+            }
+        })
+        .catch(error => {
+            console.error("Error fetching search results:", error);
+            const listItem = document.createElement("li");
+            listItem.textContent = "An error occurred while fetching results.";
+            resultsList.appendChild(listItem);
         });
-
-        fetchWeatherData(city.lat, city.lng)
-            .then(data => {
-                if (data) {
-                    // Display weather information in the marker's info window
-                    const infoWindow = new google.maps.InfoWindow({
-                        content: `<strong>${city.name}</strong><br>Temperature: ${data.current.temp_c}°C<br>Condition: ${data.current.condition.text}`
-                    });
-
-                    marker.addListener('click', () => {
-                        infoWindow.open(map, marker);
-                    });
-                }
-            });
-    });
 }
