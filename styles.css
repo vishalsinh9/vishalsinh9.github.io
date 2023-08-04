@@ -1,80 +1,24 @@
-/* Reset default styles */
-body, html {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-}
-
-/* Set a background color or image */
 body {
-  background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-/* Center the map container */
-#map {
-  height: 500px;
-  width: 100%;
-  margin: 0 auto;
-}
-
-/* Styling for map markers */
-.google-maps-marker {
-  /* Add your marker styles here */
-  background-color: #007BFF;
-  color: #fff;
-  padding: 6px 12px;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-/* Styling for marker info windows */
-.google-maps-infowindow {
-  /* Add your info window styles here */
-  background-color: #fff;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
-  padding: 10px;
-  border-radius: 4px;
-  max-width: 200px;
-}
-
-.google-maps-infowindow h3 {
-  margin-top: 0;
-  margin-bottom: 8px;
-  font-size: 16px;
-}
-
-.google-maps-infowindow p {
-  margin: 0;
-}
-
-/* Styling for the header */
 header {
-  background-color: #007BFF;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 36px;
+main {
+    padding: 20px;
 }
 
-/* Styling for the footer */
-footer {
-  background-color: #333;
-  color: #fff;
-  padding: 10px;
-  text-align: center;
+#resultsList {
+    list-style: none;
+    padding: 0;
 }
 
-/* Add your own additional styles as needed */
-
-/* Media queries for responsiveness */
-@media (max-width: 768px) {
-  /* Add styles for smaller screens */
-}
-
-@media (max-width: 480px) {
-  /* Add styles for mobile screens */
+li {
+    margin-bottom: 10px;
 }
