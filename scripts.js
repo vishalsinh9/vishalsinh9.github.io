@@ -29,3 +29,28 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log("Form submitted!", formData);
     });
 });
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById('application-form');
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault(); // Prevent default form submission
+
+        // Perform form validation
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const resume = document.getElementById('resume').value.trim();
+
+        if (!name || !email || !resume) {
+            alert('Please fill in all required fields.');
+            return;
+        }
+
+        // If all fields are filled, proceed with form submission
+        const formData = new FormData(this);
+        // Send formData to server using fetch or AJAX
+        console.log("Form submitted!", formData);
+
+        // Optional: Clear form fields after submission
+        form.reset();
+    });
+});
